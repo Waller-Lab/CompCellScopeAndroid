@@ -84,7 +84,7 @@ public class AcquireActivity extends Activity implements OnTouchListener, Notice
     private ProgressBar acquireProgressBar;
     
     public double objectiveNA = 0.3;
-    public double brightfieldNA = 0.25; // Account for LED size to be sure we completly cover NA .025
+    public double brightfieldNA = 0.4; // Account for LED size to be sure we completly cover NA .025
     
     public int ledCount = 508;
     public int centerLED = 249;
@@ -94,7 +94,7 @@ public class AcquireActivity extends Activity implements OnTouchListener, Notice
     PictureCallback jpegCallback;
     public String fileName = "default";
     public boolean cameraReady = true;
-    public int mmCount = 2;
+    public int mmCount = 1;
     public float mmDelay = 0.0f;
     public String datasetName = "Dataset";
     public boolean usingHDR = false;
@@ -744,6 +744,8 @@ public class AcquireActivity extends Activity implements OnTouchListener, Notice
             mCamera.enableShutterSound(false);
         }
         
+        
+        
         // Callbacks for camera acquires
         shutterCallback = new ShutterCallback() {
             public void onShutter() {
@@ -802,8 +804,10 @@ public class AcquireActivity extends Activity implements OnTouchListener, Notice
         sendData(String.format("na,%d", (int) Math.round(brightfieldNA*100)));
         
         // turn on center LED to start
-        String cmd = String.format("p%d", centerLED);
-        sendData(cmd);
+        // String cmd = String.format("p%d", centerLED);
+        // sendData(cmd);
+		sendData("an");
+        
         
     }
     
@@ -837,10 +841,11 @@ public class AcquireActivity extends Activity implements OnTouchListener, Notice
         	acquireProgressBar.setMax(5*mmCount);
         	
         	camParams = mCamera.getParameters();
+    		camParams.setExposureCompensation(0);
         	camParams.setAutoExposureLock(false);
     		mCamera.setParameters(camParams);
     	
-    		sendData("db");
+    		sendData("an");
     		try { 
 				Thread.sleep(2500);
 			} catch (InterruptedException e) {
@@ -961,7 +966,12 @@ public class AcquireActivity extends Activity implements OnTouchListener, Notice
         	    else
         	    	sendData("df");
         	    
+        	    camParams = mCamera.getParameters();
+    			camParams.setExposureCompensation(-1);
+			    mCamera.setParameters(camParams);
+        	    
         	    cameraReady = false;
+        	    mSleep(500);
         	    captureImage(path + String.format("darkfield_%d_",i+1)+ String.format("%3d", SystemClock.elapsedRealtime()-startTime));
         		while(!cameraReady)
         		{
@@ -970,6 +980,10 @@ public class AcquireActivity extends Activity implements OnTouchListener, Notice
         		
         		n++;
         		publishProgress();
+        		
+        	    camParams = mCamera.getParameters();
+    			camParams.setExposureCompensation(0);
+			    mCamera.setParameters(camParams);
         		
         		// Undo HDR and make sure AEC is locked
         		if(usingHDR)
@@ -998,12 +1012,13 @@ public class AcquireActivity extends Activity implements OnTouchListener, Notice
             acquireProgressBar.setVisibility(View.INVISIBLE); // Make invisible at first, then have it pop up
 
             //String cmd = String.format("p%d", centerLED);
-            String cmd = "bf";
+            String cmd = "df";
             sendData(cmd);
             timeLeftTextView.setText(" ");
             
     		Camera.Parameters params = mCamera.getParameters();
     		params.setAutoExposureLock(false);
+    		params.setExposureCompensation(-1);
     		mCamera.setParameters(params);
     		updateFileStructure(myDir.getAbsolutePath());
             mDataset.DATASET_PATH = Environment.getExternalStorageDirectory()+path;
