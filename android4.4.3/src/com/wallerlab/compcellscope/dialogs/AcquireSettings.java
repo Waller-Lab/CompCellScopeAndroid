@@ -62,6 +62,7 @@ public class AcquireSettings extends DialogFragment{
     private TextView acquireSettingsMultiModeCountTextView;
     private TextView acquireSettingsSetNAEditText;
     private TextView acquireSettingsSetMultiModeDelayEditText;
+    private TextView acquireSettingsAECCompensationEditText;
     private CheckBox acquireSettingsHDRCheckbox;
     
     // Override the Fragment.onAttach() method to instantiate the NoticeDialogListener
@@ -105,6 +106,7 @@ public class AcquireSettings extends DialogFragment{
      	        String mmCountValue = acquireSettingsMultiModeCountTextView.getText().toString();
     	        String naValue = acquireSettingsSetNAEditText.getText().toString();
     	        String mmDelayValue = acquireSettingsSetMultiModeDelayEditText.getText().toString();
+    	        String aecCompensationVal = acquireSettingsAECCompensationEditText.getText().toString();
     	        String datasetName = acquireSettingsSetDatasetName.getText().toString();
     	        Log.d(TAG,String.format("mmCount: %s", mmCountValue));
     	        Log.d(TAG,String.format("mmDelay: %s", mmDelayValue));
@@ -114,6 +116,7 @@ public class AcquireSettings extends DialogFragment{
     	        callingActivity.setMultiModeDelay(Float.parseFloat(mmDelayValue));
     	        callingActivity.setNA(Float.parseFloat(naValue));
     	        callingActivity.setDatasetName(datasetName);
+    	        callingActivity.setAECCompensation(Integer.parseInt(aecCompensationVal));
     	        callingActivity.setHDR(acquireSettingsHDRCheckbox.isChecked());
              }
          })
@@ -133,9 +136,13 @@ public class AcquireSettings extends DialogFragment{
           acquireSettingsSetNAEditText.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL);
           acquireSettingsSetNAEditText.setText(String.format("%.2f", callingActivity.brightfieldNA));
           
+          acquireSettingsAECCompensationEditText = (TextView) content.findViewById(R.id.acquireSettingsAECCompensationEditText);
+          acquireSettingsAECCompensationEditText.setInputType(InputType.TYPE_NUMBER_FLAG_SIGNED);
+          acquireSettingsAECCompensationEditText.setText(String.format("%d", callingActivity.aecCompensation));
+          
           acquireSettingsSetMultiModeDelayEditText = (TextView) content.findViewById(R.id.acquireSettingsSetMultiModeDelayEditText);
           acquireSettingsSetMultiModeDelayEditText.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL);
-          acquireSettingsSetMultiModeDelayEditText.setText(String.format("%.1f", callingActivity.mmDelay));
+          acquireSettingsSetMultiModeDelayEditText.setText(String.format("%.2f", callingActivity.mmDelay));
           
           acquireSettingsSetDatasetName = (TextView) content.findViewById(R.id.acquireSettingsSetDatasetName);
           acquireSettingsSetDatasetName.setInputType(InputType.TYPE_CLASS_TEXT);

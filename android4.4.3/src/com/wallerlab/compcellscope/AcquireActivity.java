@@ -96,6 +96,7 @@ public class AcquireActivity extends Activity implements OnTouchListener, Notice
     public boolean cameraReady = true;
     public int mmCount = 1;
     public float mmDelay = 0.0f;
+    public int aecCompensation = 0;
     public String datasetName = "Dataset";
     public boolean usingHDR = false;
     public boolean darkfieldAnnulus = true;
@@ -757,7 +758,6 @@ public class AcquireActivity extends Activity implements OnTouchListener, Notice
             public void onPictureTaken(byte[] data, Camera camera) 
             {
                 FileOutputStream outStream = null;
-                //Log.d(TAG, "onPictureTaken - jpeg");
 	                String imageFileName = fileName + ".jpeg";
 	                File storageDir = Environment.getExternalStorageDirectory();
 	                String path = storageDir+imageFileName;
@@ -794,7 +794,7 @@ public class AcquireActivity extends Activity implements OnTouchListener, Notice
             {
             	final Camera.Parameters myParams = mCamera.getParameters();
             	myParams.setAutoExposureLock(true);
-            	myParams.setExposureCompensation(0);
+            	myParams.setExposureCompensation(aecCompensation);
                 mCamera.autoFocus(null);
                 mCamera.setParameters(myParams);
                 return false;
@@ -841,7 +841,7 @@ public class AcquireActivity extends Activity implements OnTouchListener, Notice
         	acquireProgressBar.setMax(5*mmCount);
         	
         	camParams = mCamera.getParameters();
-    		camParams.setExposureCompensation(0);
+    		camParams.setExposureCompensation(aecCompensation);
         	camParams.setAutoExposureLock(false);
     		mCamera.setParameters(camParams);
     	
@@ -967,7 +967,7 @@ public class AcquireActivity extends Activity implements OnTouchListener, Notice
         	    	sendData("df");
         	    
         	    camParams = mCamera.getParameters();
-    			camParams.setExposureCompensation(-1);
+    			camParams.setExposureCompensation(aecCompensation);
 			    mCamera.setParameters(camParams);
         	    
         	    cameraReady = false;
@@ -982,7 +982,7 @@ public class AcquireActivity extends Activity implements OnTouchListener, Notice
         		publishProgress();
         		
         	    camParams = mCamera.getParameters();
-    			camParams.setExposureCompensation(0);
+    			camParams.setExposureCompensation(aecCompensation);
 			    mCamera.setParameters(camParams);
         		
         		// Undo HDR and make sure AEC is locked
@@ -1018,7 +1018,7 @@ public class AcquireActivity extends Activity implements OnTouchListener, Notice
             
     		Camera.Parameters params = mCamera.getParameters();
     		params.setAutoExposureLock(false);
-    		params.setExposureCompensation(-1);
+    		params.setExposureCompensation(aecCompensation);
     		mCamera.setParameters(params);
     		updateFileStructure(myDir.getAbsolutePath());
             mDataset.DATASET_PATH = Environment.getExternalStorageDirectory()+path;
@@ -1066,6 +1066,7 @@ public class AcquireActivity extends Activity implements OnTouchListener, Notice
         	
             Camera.Parameters camParams = mCamera.getParameters();
             camParams.setAutoExposureLock(false);
+            camParams.setExposureCompensation(aecCompensation);
             mCamera.setParameters(camParams);
         	
         	int edgeLED = centerLED; // For Now
@@ -1088,6 +1089,7 @@ public class AcquireActivity extends Activity implements OnTouchListener, Notice
             // Lock exposure - here we assume that the center LED is turned on when AcquireActivity class instance is created
             camParams = mCamera.getParameters();
             camParams.setAutoExposureLock(true);
+            camParams.setExposureCompensation(0);
             mCamera.setParameters(camParams);
             mDataset.DATASET_PATH = Environment.getExternalStorageDirectory()+path;
             mDataset.DATASET_TYPE = acquireType;
@@ -1231,6 +1233,7 @@ public class AcquireActivity extends Activity implements OnTouchListener, Notice
   public void setMultiModeDelay(float delay) 
   {
       mmDelay = delay;
+
   }
   
   public void setDatasetName(String name)
@@ -1246,7 +1249,6 @@ public class AcquireActivity extends Activity implements OnTouchListener, Notice
       mCamera.setParameters(camParams);
   }
   
-  
   public void toggleDarkfield()
   {
 	  if(darkfieldAnnulus)
@@ -1258,6 +1260,16 @@ public class AcquireActivity extends Activity implements OnTouchListener, Notice
       camParams.setAutoExposureLock(false);
       mCamera.setParameters(camParams);
   }
+  
+  public void setAECCompensation( int aecVal)
+  {
+	  aecCompensation = aecVal;
+      Camera.Parameters camParams = mCamera.getParameters();
+      camParams.setAutoExposureLock(false);
+      camParams.setExposureCompensation(aecCompensation);
+      mCamera.setParameters(camParams);
+  }
+  
   
   public void toggleAlignment()
   {

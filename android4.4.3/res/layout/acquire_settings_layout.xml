@@ -140,6 +140,30 @@
                 android:text="0.0" />
 
         </LinearLayout>
+        
+                <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AEC Compensation:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/acquireSettingsAECCompensationEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="number|numberSigned"
+                android:text="0" >
+
+            </EditText>
+
+        </LinearLayout>
 
         <CheckBox
             android:id="@+id/acquireSettingsHDRCheckbox"
