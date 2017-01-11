@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "/Users/zfphil/develop/CompCellScope_failsafe/computationalCellScope/build/intermediates/res/merged/debug/menu/directory_chooser_dialog.xml",
+        "source": "/Users/zfphil/develop/CompCellScope_failsafe/computationalCellScope/src/main/res/menu/directory_chooser_dialog.xml"
+    },
+    {
+        "merged": "/Users/zfphil/develop/CompCellScope_failsafe/computationalCellScope/build/intermediates/res/merged/debug/menu/image__gallery.xml",
+        "source": "/Users/zfphil/develop/CompCellScope_failsafe/computationalCellScope/src/main/res/menu/image__gallery.xml"
+    },
+    {
+        "merged": "/Users/zfphil/develop/CompCellScopeAndroid/androidStudio/computationalCellScope/build/intermediates/res/merged/debug/menu/main.xml",
+        "source": "/Users/zfphil/develop/CompCellScopeAndroid/androidStudio/computationalCellScope/src/main/res/menu/main.xml"
+    },
+    {
+        "merged": "/Users/zfphil/develop/CompCellScopeAndroid/androidStudio/computationalCellScope/build/intermediates/res/merged/debug/menu/image__gallery.xml",
+        "source": "/Users/zfphil/develop/CompCellScopeAndroid/androidStudio/computationalCellScope/src/main/res/menu/image__gallery.xml"
+    },
+    {
+        "merged": "/Users/zfphil/develop/CompCellScopeAndroid/androidStudio/computationalCellScope/build/intermediates/res/merged/debug/menu/folder__chooser.xml",
+        "source": "/Users/zfphil/develop/CompCellScopeAndroid/androidStudio/computationalCellScope/src/main/res/menu/folder__chooser.xml"
+    },
+    {
+        "merged": "/Users/zfphil/develop/CompCellScope_failsafe/computationalCellScope/build/intermediates/res/merged/debug/menu/folder__chooser.xml",
+        "source": "/Users/zfphil/develop/CompCellScope_failsafe/computationalCellScope/src/main/res/menu/folder__chooser.xml"
+    },
+    {
+        "merged": "/Users/zfphil/develop/CompCellScope_failsafe/computationalCellScope/build/intermediates/res/merged/debug/menu/main.xml",
+        "source": "/Users/zfphil/develop/CompCellScope_failsafe/computationalCellScope/src/main/res/menu/main.xml"
+    },
+    {
+        "merged": "/Users/zfphil/develop/CompCellScopeAndroid/androidStudio/computationalCellScope/build/intermediates/res/merged/debug/menu/directory_chooser_dialog.xml",
+        "source": "/Users/zfphil/develop/CompCellScopeAndroid/androidStudio/computationalCellScope/src/main/res/menu/directory_chooser_dialog.xml"
+    }
+]

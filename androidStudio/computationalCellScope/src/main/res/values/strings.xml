@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Computational CellScope</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="LED_Array_List">
+        <item>Adafruit 32x32 (R.Pi)</item>
+        <item>Waller Lab Dome</item>
+    </string-array>
+
+    <string name="title_activity_directory_chooser_dialog">DirectoryChooserDialog</string>
+
+</resources>

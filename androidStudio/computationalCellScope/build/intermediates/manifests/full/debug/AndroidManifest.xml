@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wallerlab.compcellscope"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <application
+        android:name="com.wallerlab.compcellscope.GlobalApplicationClass"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
+        android:theme="@android:style/Theme.Holo" >
+        <activity
+            android:name="com.wallerlab.compcellscope.ComputationalCellScopeMain"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.wallerlab.compcellscope.GalleryViewActivity"
+            android:label="@string/app_name"
+            android:parentActivityName="com.wallerlab.compcellscope.ComputationalCellScopeMain" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wallerlab.compcellscope.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.wallerlab.compcellscope.AcquireActivity"
+            android:label="@string/app_name"
+            android:parentActivityName="com.wallerlab.compcellscope.ComputationalCellScopeMain" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wallerlab.compcellscope.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.wallerlab.compcellscope.MultiModeViewActivity"
+            android:label="@string/app_name"
+            android:parentActivityName="com.wallerlab.compcellscope.ComputationalCellScopeMain" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wallerlab.compcellscope.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.wallerlab.compcellscope.bluetooth.BluetoothActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.wallerlab.compcellscope.Folder_Chooser"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.wallerlab.compcellscope.Image_Gallery"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.wallerlab.compcellscope.bluetooth.BluetoothDeviceListActivity"
+            android:label="@string/app_name"
+            android:parentActivityName="com.wallerlab.compcellscope.ComputationalCellScopeMain" >
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.wallerlab.compcellscope.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.wallerlab.compcellscope.dialog.DirectoryChooserDialog"
+            android:label="@string/title_activity_directory_chooser_dialog" >
+        </activity>
+    </application>
+
+</manifest>

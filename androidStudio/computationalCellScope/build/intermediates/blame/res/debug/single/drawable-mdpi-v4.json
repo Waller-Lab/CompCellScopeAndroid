@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/zfphil/develop/CompCellScope_failsafe/computationalCellScope/build/intermediates/res/merged/debug/drawable-mdpi-v4/background.bmp",
+        "source": "/Users/zfphil/develop/CompCellScope_failsafe/computationalCellScope/src/main/res/drawable-mdpi/background.bmp"
+    },
+    {
+        "merged": "/Users/zfphil/develop/CompCellScopeAndroid/androidStudio/computationalCellScope/build/intermediates/res/merged/debug/drawable-mdpi-v4/background.bmp",
+        "source": "/Users/zfphil/develop/CompCellScopeAndroid/androidStudio/computationalCellScope/src/main/res/drawable-mdpi/background.bmp"
+    }
+]

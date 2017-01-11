@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/zfphil/develop/CompCellScope_failsafe/computationalCellScope/build/intermediates/res/merged/debug/color/abc_search_url_text_holo.xml",
+        "source": "/Users/zfphil/develop/CompCellScope_failsafe/computationalCellScope/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/color/abc_search_url_text_holo.xml"
+    },
+    {
+        "merged": "/Users/zfphil/develop/CompCellScopeAndroid/androidStudio/computationalCellScope/build/intermediates/res/merged/debug/color/abc_search_url_text_holo.xml",
+        "source": "/Users/zfphil/develop/CompCellScopeAndroid/androidStudio/computationalCellScope/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/res/color/abc_search_url_text_holo.xml"
+    }
+]
