@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/zfphil/develop/CompCellScope_failsafe/computationalCellScope/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/Users/zfphil/develop/CompCellScope_failsafe/computationalCellScope/src/debug/jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/zfphil/develop/CompCellScopeAndroid/androidStudio/computationalCellScope/src/main/jniLibs"/></dataSet><dataSet config="debug"><source path="/Users/zfphil/develop/CompCellScopeAndroid/androidStudio/computationalCellScope/src/debug/jniLibs"/></dataSet></merger>

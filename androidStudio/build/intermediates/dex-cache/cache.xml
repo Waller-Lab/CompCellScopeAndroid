@@ -3,30 +3,30 @@
 
     <item
         is-multidex="false"
+        jar="/Users/zfphil/develop/CompCellScopeAndroid/androidStudio/computationalCellScope/build/intermediates/exploded-aar/androidStudio/openCVLibrary2482/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="20cc90d60890f69a7b72e0cc7e76e222c86b5f1e">
+        <dex dex="/Users/zfphil/develop/CompCellScopeAndroid/androidStudio/computationalCellScope/build/intermediates/pre-dexed/debug/androidStudio-openCVLibrary2482-unspecified_cc2e9255b150eb00dea78c9fa00dc2ddee8dd266.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/zfphil/develop/CompCellScopeAndroid/androidStudio/computationalCellScope/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28">
+        <dex dex="/Users/zfphil/develop/CompCellScopeAndroid/androidStudio/computationalCellScope/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-19.1.0_3f674452e06a2dd439437d55c12c958807d8d635.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/zfphil/Library/Android/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.3"
         sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
-        <dex dex="/Users/zfphil/develop/CompCellScope_failsafe/computationalCellScope/build/intermediates/pre-dexed/debug/support-v4-19.1.0_2a4aa81c7d84168759d35610175624f4b22c9f17.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/zfphil/develop/CompCellScope_failsafe/computationalCellScope/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28">
-        <dex dex="/Users/zfphil/develop/CompCellScope_failsafe/computationalCellScope/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-19.1.0_94fc1044686180b9805656f7be748e8295c93f91.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/zfphil/develop/CompCellScope_failsafe/computationalCellScope/build/intermediates/exploded-aar/CompCellScope_failsafe/openCVLibrary2482/unspecified/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.3"
-        sha1="20cc90d60890f69a7b72e0cc7e76e222c86b5f1e">
-        <dex dex="/Users/zfphil/develop/CompCellScope_failsafe/computationalCellScope/build/intermediates/pre-dexed/debug/CompCellScope_failsafe-openCVLibrary2482-unspecified_54b059b1d600b71ab2dbf40ab4ffcf913a7a9069.jar" />
+        <dex dex="/Users/zfphil/develop/CompCellScopeAndroid/androidStudio/computationalCellScope/build/intermediates/pre-dexed/debug/support-v4-19.1.0_2a4aa81c7d84168759d35610175624f4b22c9f17.jar" />
     </item>
 
 </items>

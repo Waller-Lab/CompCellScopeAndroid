@@ -98,7 +98,7 @@ public class MultiModeViewActivity extends Activity implements OnTouchListener, 
     public String fileName = "default";
     public boolean cameraReady = true;
     public int mmCount = 5;
-    public float mmDelay = 0.0f;
+    public float mmDelay = 0.1f;
     public String datasetName = "Dataset";
     
     private int frameNum = 1;
@@ -241,11 +241,7 @@ public class MultiModeViewActivity extends Activity implements OnTouchListener, 
         Camera.Parameters camParams;
         camParams = mCamera.getParameters();
         camParams.setAutoExposureLock(false);
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+
         //camParams.setAutoExposureLock(true);
         mCamera.setParameters(camParams);
         
@@ -342,7 +338,7 @@ public class MultiModeViewActivity extends Activity implements OnTouchListener, 
     			}
     			new calcDPCTask().execute(dpcLeft, dpcRight, dpcLRImg);
     			try {
-    				Thread.sleep(50);
+    				Thread.sleep(100);
     			} catch (InterruptedException e) {
     				e.printStackTrace();
     			}
@@ -362,7 +358,7 @@ public class MultiModeViewActivity extends Activity implements OnTouchListener, 
     			}
     	    	new calcDPCTask().execute(dpcTop, dpcBottom, dpcTBImg);
     			try {
-    				Thread.sleep(50);
+    				Thread.sleep(100);
     			} catch (InterruptedException e) {
     				e.printStackTrace();
     			}
@@ -370,8 +366,7 @@ public class MultiModeViewActivity extends Activity implements OnTouchListener, 
     			break;
     		}
     		case 4:
-    		{
-    
+			{
 				sendData("bf");
     			mRgba.copyTo(bfImg);
     			//Log.d(TAG,"Displayed bf img");
